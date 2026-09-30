@@ -1,10 +1,788 @@
-<h1>
-        hello php
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <?php
+    <title>MIT College | Excellence in Education</title>
 
-  echo "hello world";
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    ?>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Fade up */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-up {
+            animation: fadeUp 1s ease forwards;
+        }
+
+        /* Gradient animation */
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .animated-gradient {
+            background-size: 200% 200%;
+            animation: gradientMove 8s ease infinite;
+        }
+
+        /* Glow */
+        .glow:hover {
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.35);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-xl">
+                M
+            </div>
+
+            <div>
+                <h1 class="font-bold text-xl text-blue-700">MIT College</h1>
+                <p class="text-xs text-gray-500">Excellence • Innovation • Success</p>
+            </div>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8 font-medium">
+            <a href="#home" class="hover:text-blue-600 transition">Home</a>
+            <a href="#about" class="hover:text-blue-600 transition">About</a>
+            <a href="#courses" class="hover:text-blue-600 transition">Courses</a>
+            <a href="#facilities" class="hover:text-blue-600 transition">Facilities</a>
+            <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+
+            <a href="#contact"
+               class="bg-blue-600 text-white px-5 py-2.5 rounded-full hover:bg-blue-700 transition">
+                Apply Now
+            </a>
+        </div>
+
+        <!-- Mobile button -->
+        <button id="menuBtn" class="md:hidden text-2xl">
+            ☰
+        </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden px-6 pb-5 bg-white">
+        <a href="#home" class="block py-2">Home</a>
+        <a href="#about" class="block py-2">About</a>
+        <a href="#courses" class="block py-2">Courses</a>
+        <a href="#facilities" class="block py-2">Facilities</a>
+        <a href="#contact" class="block py-2">Contact</a>
+    </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section id="home"
+    class="pt-32 min-h-screen flex items-center animated-gradient
+    bg-gradient-to-br from-blue-700 via-indigo-700 to-purple-800 text-white">
+
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Hero Text -->
+        <div class="fade-up">
+
+            <span class="inline-block bg-white/10 border border-white/20 px-4 py-2 rounded-full text-sm mb-6">
+                🎓 Admissions Open 2026-27
+            </span>
+
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+                Shape Your
+                <span class="text-yellow-300">Future</span>
+                With Us.
+            </h1>
+
+            <p class="mt-6 text-lg text-blue-100 max-w-xl">
+                Welcome to MIT College — a place where knowledge,
+                innovation, creativity and ambition come together
+                to build tomorrow's leaders.
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-4">
+
+                <a href="#courses"
+                   class="bg-yellow-400 text-gray-900 px-7 py-3 rounded-full
+                   font-semibold hover:bg-yellow-300 transition transform hover:scale-105">
+                    Explore Courses →
+                </a>
+
+                <a href="#about"
+                   class="border border-white/40 px-7 py-3 rounded-full
+                   hover:bg-white hover:text-blue-700 transition">
+                    Discover MIT
+                </a>
+
+            </div>
+
+            <!-- Stats -->
+            <div class="mt-12 flex flex-wrap gap-10">
+
+                <div>
+                    <h3 class="text-3xl font-bold">25+</h3>
+                    <p class="text-blue-200 text-sm">Years Excellence</p>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-bold">10K+</h3>
+                    <p class="text-blue-200 text-sm">Students</p>
+                </div>
+
+                <div>
+                    <h3 class="text-3xl font-bold">95%</h3>
+                    <p class="text-blue-200 text-sm">Placement Rate</p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Hero Image -->
+        <div class="relative float">
+
+            <div class="absolute inset-0 bg-yellow-400/20 blur-3xl rounded-full"></div>
+
+            <div class="relative bg-white/10 backdrop-blur-md
+                        border border-white/20 rounded-3xl p-4 shadow-2xl">
+
+                <img
+                    src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1000&q=80"
+                    alt="College Campus"
+                    class="rounded-2xl w-full h-[450px] object-cover">
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="py-24 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center max-w-3xl mx-auto mb-16">
+
+            <span class="text-blue-600 font-semibold">
+                ABOUT MIT COLLEGE
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-bold mt-3">
+                Empowering Students Since 2000
+            </h2>
+
+            <p class="mt-5 text-gray-600">
+                Our mission is to provide high-quality education,
+                encourage innovation and prepare students for
+                real-world challenges.
+            </p>
+
+        </div>
+
+
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+            <div class="relative">
+
+                <img
+                    src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80"
+                    alt="Students"
+                    class="rounded-3xl shadow-xl w-full">
+
+                <div class="absolute -bottom-6 -right-6
+                            bg-blue-600 text-white p-6 rounded-2xl shadow-xl">
+
+                    <p class="text-3xl font-bold">25+</p>
+                    <p class="text-sm">Years of Excellence</p>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h3 class="text-3xl font-bold mb-5">
+                    Education Beyond Classrooms
+                </h3>
+
+                <p class="text-gray-600 leading-8 mb-6">
+                    At MIT College, we believe education is not
+                    limited to textbooks. Our students participate
+                    in technical events, cultural activities,
+                    sports, research and entrepreneurship programs.
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-5">
+
+                    <div class="p-5 rounded-2xl bg-blue-50 glow transition">
+                        <div class="text-3xl mb-3">🎯</div>
+                        <h4 class="font-bold">Our Mission</h4>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Develop skilled and responsible professionals.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-purple-50 glow transition">
+                        <div class="text-3xl mb-3">🚀</div>
+                        <h4 class="font-bold">Our Vision</h4>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Become a center of innovation and excellence.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= COURSES ================= -->
+
+<section id="courses" class="py-24 bg-gray-50">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-14">
+
+            <span class="text-blue-600 font-semibold">
+                ACADEMIC PROGRAMS
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-bold mt-3">
+                Explore Our Courses
+            </h2>
+
+            <p class="text-gray-600 mt-4">
+                Choose a program that matches your passion and career goals.
+            </p>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-7">
+
+            <!-- Course 1 -->
+            <div class="bg-white rounded-3xl p-7 shadow-sm
+                        hover:-translate-y-3 hover:shadow-xl
+                        transition duration-300 glow">
+
+                <div class="w-14 h-14 bg-blue-100 text-blue-600
+                            rounded-2xl flex items-center justify-center text-2xl">
+                    💻
+                </div>
+
+                <h3 class="text-xl font-bold mt-6">
+                    Computer Science
+                </h3>
+
+                <p class="text-gray-600 text-sm mt-3 leading-6">
+                    Learn programming, AI, software development,
+                    databases and modern technologies.
+                </p>
+
+                <a href="#contact"
+                   class="inline-block mt-5 text-blue-600 font-semibold">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+            <!-- Course 2 -->
+            <div class="bg-white rounded-3xl p-7 shadow-sm
+                        hover:-translate-y-3 hover:shadow-xl
+                        transition duration-300 glow">
+
+                <div class="w-14 h-14 bg-green-100 text-green-600
+                            rounded-2xl flex items-center justify-center text-2xl">
+                    ⚙️
+                </div>
+
+                <h3 class="text-xl font-bold mt-6">
+                    Mechanical Engineering
+                </h3>
+
+                <p class="text-gray-600 text-sm mt-3 leading-6">
+                    Explore design, manufacturing, robotics
+                    and mechanical systems.
+                </p>
+
+                <a href="#contact"
+                   class="inline-block mt-5 text-blue-600 font-semibold">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+            <!-- Course 3 -->
+            <div class="bg-white rounded-3xl p-7 shadow-sm
+                        hover:-translate-y-3 hover:shadow-xl
+                        transition duration-300 glow">
+
+                <div class="w-14 h-14 bg-purple-100 text-purple-600
+                            rounded-2xl flex items-center justify-center text-2xl">
+                    📊
+                </div>
+
+                <h3 class="text-xl font-bold mt-6">
+                    Business Management
+                </h3>
+
+                <p class="text-gray-600 text-sm mt-3 leading-6">
+                    Build skills in leadership, finance,
+                    marketing and entrepreneurship.
+                </p>
+
+                <a href="#contact"
+                   class="inline-block mt-5 text-blue-600 font-semibold">
+                    Learn More →
+                </a>
+
+            </div>
+
+
+            <!-- Course 4 -->
+            <div class="bg-white rounded-3xl p-7 shadow-sm
+                        hover:-translate-y-3 hover:shadow-xl
+                        transition duration-300 glow">
+
+                <div class="w-14 h-14 bg-orange-100 text-orange-600
+                            rounded-2xl flex items-center justify-center text-2xl">
+                    🔬
+                </div>
+
+                <h3 class="text-xl font-bold mt-6">
+                    Science
+                </h3>
+
+                <p class="text-gray-600 text-sm mt-3 leading-6">
+                    Develop scientific thinking through
+                    practical learning and research.
+                </p>
+
+                <a href="#contact"
+                   class="inline-block mt-5 text-blue-600 font-semibold">
+                    Learn More →
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= FACILITIES ================= -->
+
+<section id="facilities" class="py-24 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-14">
+
+            <span class="text-blue-600 font-semibold">
+                CAMPUS LIFE
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-bold mt-3">
+                World-Class Facilities
+            </h2>
+
+        </div>
+
+
+        <div class="grid md:grid-cols-3 gap-7">
+
+            <div class="relative group overflow-hidden rounded-3xl">
+                <img
+                    src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=900&q=80"
+                    class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+
+                <div class="absolute inset-0 bg-gradient-to-t
+                            from-black/80 to-transparent flex items-end p-7">
+
+                    <div class="text-white">
+                        <h3 class="text-2xl font-bold">Modern Campus</h3>
+                        <p class="text-sm text-gray-200 mt-2">
+                            Smart classrooms and beautiful campus.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="relative group overflow-hidden rounded-3xl">
+                <img
+                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80"
+                    class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+
+                <div class="absolute inset-0 bg-gradient-to-t
+                            from-black/80 to-transparent flex items-end p-7">
+
+                    <div class="text-white">
+                        <h3 class="text-2xl font-bold">Innovation Labs</h3>
+                        <p class="text-sm text-gray-200 mt-2">
+                            Modern labs for research and innovation.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="relative group overflow-hidden rounded-3xl">
+                <img
+                    src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80"
+                    class="w-full h-80 object-cover group-hover:scale-110 transition duration-700">
+
+                <div class="absolute inset-0 bg-gradient-to-t
+                            from-black/80 to-transparent flex items-end p-7">
+
+                    <div class="text-white">
+                        <h3 class="text-2xl font-bold">Student Life</h3>
+                        <p class="text-sm text-gray-200 mt-2">
+                            Clubs, events, sports and cultural activities.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ================= ACHIEVEMENTS ================= -->
+
+<section class="py-20 bg-blue-700 text-white">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+
+            <div>
+                <h2 class="text-5xl font-bold">10K+</h2>
+                <p class="mt-2 text-blue-200">Students</p>
+            </div>
+
+            <div>
+                <h2 class="text-5xl font-bold">500+</h2>
+                <p class="mt-2 text-blue-200">Faculty</p>
+            </div>
+
+            <div>
+                <h2 class="text-5xl font-bold">50+</h2>
+                <p class="mt-2 text-blue-200">Programs</p>
+            </div>
+
+            <div>
+                <h2 class="text-5xl font-bold">95%</h2>
+                <p class="mt-2 text-blue-200">Placement</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= TESTIMONIAL ================= -->
+
+<section class="py-24 bg-gray-50">
+
+    <div class="max-w-5xl mx-auto px-6 text-center">
+
+        <span class="text-blue-600 font-semibold">
+            STUDENT VOICE
+        </span>
+
+        <h2 class="text-4xl font-bold mt-3">
+            What Our Students Say
+        </h2>
+
+        <div class="mt-12 bg-white rounded-3xl p-10 shadow-lg">
+
+            <div class="text-yellow-400 text-3xl">
+                ★★★★★
+            </div>
+
+            <p class="text-xl text-gray-600 mt-6 leading-8">
+                "MIT College gave me the confidence and skills
+                to turn my ideas into reality. The faculty and
+                campus environment are amazing."
+            </p>
+
+            <div class="mt-7">
+
+                <div class="w-14 h-14 mx-auto rounded-full
+                            bg-blue-600 text-white flex items-center
+                            justify-center font-bold text-xl">
+                    AK
+                </div>
+
+                <h4 class="font-bold mt-3">
+                    Aditya Kumar
+                </h4>
+
+                <p class="text-sm text-gray-500">
+                    Computer Science Student
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact"
+    class="py-24 bg-gradient-to-br from-gray-900 to-blue-950 text-white">
+
+    <div class="max-w-6xl mx-auto px-6">
+
+        <div class="text-center mb-14">
+
+            <span class="text-blue-400 font-semibold">
+                GET IN TOUCH
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-bold mt-3">
+                Start Your Journey
+            </h2>
+
+            <p class="text-gray-400 mt-4">
+                Have questions about admissions? Contact us today.
+            </p>
+
+        </div>
+
+
+        <div class="grid lg:grid-cols-2 gap-12">
+
+            <!-- Contact information -->
+            <div>
+
+                <h3 class="text-2xl font-bold mb-7">
+                    Contact Information
+                </h3>
+
+                <div class="space-y-6">
+
+                    <div class="flex gap-4">
+                        <div class="text-2xl">📍</div>
+                        <div>
+                            <h4 class="font-semibold">Address</h4>
+                            <p class="text-gray-400">
+                                MIT College Campus, Pune, Maharashtra
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-2xl">📧</div>
+                        <div>
+                            <h4 class="font-semibold">Email</h4>
+                            <p class="text-gray-400">
+                                admissions@mitcollege.edu
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-2xl">📞</div>
+                        <div>
+                            <h4 class="font-semibold">Phone</h4>
+                            <p class="text-gray-400">
+                                +91 98765 43210
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Form -->
+            <form class="bg-white/10 backdrop-blur-md
+                         border border-white/10 p-8 rounded-3xl">
+
+                <div class="grid sm:grid-cols-2 gap-5">
+
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        class="w-full px-5 py-3 rounded-xl
+                               bg-white/10 border border-white/10
+                               text-white placeholder-gray-400
+                               focus:outline-none focus:border-blue-400">
+
+                    <input
+                        type="email"
+                        placeholder="Email Address"
+                        class="w-full px-5 py-3 rounded-xl
+                               bg-white/10 border border-white/10
+                               text-white placeholder-gray-400
+                               focus:outline-none focus:border-blue-400">
+
+                </div>
+
+                <input
+                    type="text"
+                    placeholder="Subject"
+                    class="w-full mt-5 px-5 py-3 rounded-xl
+                           bg-white/10 border border-white/10
+                           text-white placeholder-gray-400
+                           focus:outline-none focus:border-blue-400">
+
+                <textarea
+                    rows="5"
+                    placeholder="Your Message"
+                    class="w-full mt-5 px-5 py-3 rounded-xl
+                           bg-white/10 border border-white/10
+                           text-white placeholder-gray-400
+                           focus:outline-none focus:border-blue-400"></textarea>
+
+                <button
+                    type="submit"
+                    class="mt-5 w-full bg-blue-600 hover:bg-blue-500
+                           py-3 rounded-xl font-semibold transition
+                           transform hover:scale-[1.02]">
+                    Send Message 🚀
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-gray-950 text-gray-400 py-8">
+
+    <div class="max-w-7xl mx-auto px-6
+                flex flex-col md:flex-row
+                justify-between items-center gap-4">
+
+        <p>
+            © 2026 MIT College. All Rights Reserved.
+        </p>
+
+        <div class="flex gap-5">
+            <a href="#" class="hover:text-white transition">Instagram</a>
+            <a href="#" class="hover:text-white transition">Facebook</a>
+            <a href="#" class="hover:text-white transition">LinkedIn</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    // Mobile menu
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+
+
+    // Close mobile menu after clicking a link
+    document.querySelectorAll("#mobileMenu a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        });
+    });
+
+
+    // Contact form demo
+    document.querySelector("form").addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        alert("Thank you! Your message has been submitted.");
+
+        this.reset();
+
+    });
+
+</script>
+
+</body>
+</html>
+
  
